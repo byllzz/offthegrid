@@ -8,8 +8,9 @@ function App() {
       <Ruler />
       <GridBackground />
       <ControlPanel />
-      <div className="footer-credits">
-        designed and developed by <strong>Rostislav Blaha</strong> &bull; Re-engineered 2026
+      <div className="fixed bottom-[15px] right-5 text-[11px] text-[#999] z-[100] print:hidden">
+        designed and developed by <strong className="text-[#555]">Rostislav Blaha</strong> &bull;
+        Re-engineered 2026
       </div>
     </>
   );
