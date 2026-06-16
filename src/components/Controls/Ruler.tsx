@@ -3,6 +3,7 @@ import { useGridStore } from '../../store/gridStore';
 
 export const Ruler: React.FC = () => {
   const { unit } = useGridStore();
+  console.log(unit);
 
   // Top scale: Inches (Color shifted from #333333 to #666666 for a dimmer look)
   const topInchesSvg = `data:image/svg+xml,%3Csvg%20width='96'%20height='28'%20xmlns='http://www.w3.org/2000/svg'%20shape-rendering='geometricPrecision'%3E%3Cpath%20d='M0.5%200%20v28%20M6.5%200%20v5%20M12.5%200%20v13%20M18.5%200%20v5%20M24.5%200%20v20%20M30.5%200%20v7%20M36.5%200%20v16%20M42.5%200%20v10%20M48.5%200%20v24%20M54.5%200%20v10%20M60.5%200%20v16%20M66.5%200%20v10%20M72.5%200%20v18%20M78.5%200%20v10%20M84.5%200%20v13%20M90.5%200%20v10'%20stroke='%23666666'%20stroke-width='1'%20fill='none'%20stroke-linecap='square'%20vector-effect='non-scaling-stroke'/%3E%3C/svg%3E`;
