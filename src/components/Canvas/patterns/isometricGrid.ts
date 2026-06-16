@@ -7,7 +7,7 @@ export const drawIsometricGrid: PatternRenderer = (ctx, width, height, spacingPx
   ctx.lineWidth = 0.5;
 
   const step = spacingPx;
-  const angle = Math.PI / 6; // 30 degrees
+  // const angle = Math.PI / 6;
 
   // We draw three sets of lines: two diagonals and one vertical
   // Diagonal 1 (top-left to bottom-right)

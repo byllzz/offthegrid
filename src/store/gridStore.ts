@@ -31,7 +31,7 @@ export const useGridStore = create<GridStore>()(
 
       setPattern: pattern => {
         // Reset spacing to default for that pattern, but keep current unit
-        const unit = get().unit;
+        // const unit = get().unit;
         const defaultSpacing = PATTERN_INFO[pattern].defaultSpacing;
         set({
           pattern,
