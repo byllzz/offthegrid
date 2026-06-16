@@ -1,20 +1,17 @@
-import { GridCanvas } from './components/Canvas/GridCanvas';
-import { ControlPanel } from './components/Controls/ControlPanel';
-import { PatternSwitcher } from './components/Controls/PatternSwitcher';
+import { GridBackground } from './components/Canvas/GridBackground';
 import { Ruler } from './components/Controls/Ruler';
+import { ControlPanel } from './components/Controls/ControlPanel';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-white overflow-hidden">
+    <>
       <Ruler />
-      <PatternSwitcher />
-      <GridCanvas />
+      <GridBackground />
       <ControlPanel />
-
-      <footer className="fixed bottom-4 right-4 text-xs text-gray-400 z-10">
-        OffTheGrid — Make your own grid paper
-      </footer>
-    </div>
+      <div className="footer-credits">
+        designed and developed by <strong>Rostislav Blaha</strong> &bull; Re-engineered 2026
+      </div>
+    </>
   );
 }
 
