@@ -1,6 +1,6 @@
 import { useGridStore } from '../../store/gridStore';
 import { PATTERN_INFO } from '../../utils/constants';
-import { PatternType } from '../../types/grid';
+import type { PatternType } from '../../types/grid';
 
 export function PatternSwitcher() {
   const { pattern, setPattern } = useGridStore();

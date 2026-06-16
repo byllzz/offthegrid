@@ -1,4 +1,4 @@
-import { PatternRenderer } from '../../../types/grid';
+import type { PatternRenderer } from '../../../types/grid';
 
 export const drawIsometricGrid: PatternRenderer = (ctx, width, height, spacingPx, opacity) => {
   ctx.save();

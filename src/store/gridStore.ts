@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { GridConfig, PatternType, UnitType } from '../types/grid';
+import type { GridConfig, PatternType, UnitType } from '../types/grid';
 import { PATTERN_INFO, UNIT_CONFIG } from '../utils/constants';
 
 interface GridStore extends GridConfig {

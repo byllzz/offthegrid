@@ -1,4 +1,4 @@
-import { PatternType, UnitType } from '../types/grid';
+import { type PatternType, type UnitType } from '../types/grid';
 
 export const PATTERN_INFO: Record<
   PatternType,
