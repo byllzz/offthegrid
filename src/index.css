@@ -50,14 +50,24 @@ body {
   background-position: -1px -1px;
 }
 
-.p-iso {
+/* .p-iso {
   background-image:
     linear-gradient(60deg, var(--grid-color) 1px, transparent 1px),
     linear-gradient(120deg, var(--grid-color) 1px, transparent 1px),
     linear-gradient(0deg, var(--grid-color) 1px, transparent 1px);
   background-size: var(--grid-spacing) var(--grid-spacing);
   background-position: 0 0, 0 0, 0 0;
+} */
+
+.p-iso {
+  background-size: var(--grid-spacing) calc(var(--grid-spacing) * 0.866025);
+  background-image:
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(30deg, transparent 49%, var(--grid-color) 49%, var(--grid-color) 51%, transparent 51%),
+    linear-gradient(150deg, transparent 49%, var(--grid-color) 49%, var(--grid-color) 51%, transparent 51%);
+  background-position: 0 0, 0 0, 0 0;
 }
+
 
 .p-music {
   background-image: linear-gradient(to bottom,
