@@ -9,11 +9,22 @@ export const GridBackground: React.FC = () => {
   const pxPerUnit = UNIT_CONFIG[unit].pxPerUnit;
   const spacingPx = spacing * pxPerUnit;
 
+  // Helper: convert hex to rgba string
+  const hexToRgba = (hex: string, alpha: number) => {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  };
+
+  const gridColorWithOpacity = hexToRgba(gridColor, opacity);
+
   React.useEffect(() => {
     document.documentElement.style.setProperty('--grid-spacing', `${spacingPx}px`);
-    document.documentElement.style.setProperty('--grid-color', gridColor);
+    document.documentElement.style.setProperty('--grid-color', gridColorWithOpacity);
+    // Keep --opacity for any other usage (though not strictly needed now)
     document.documentElement.style.setProperty('--opacity', String(opacity));
-  }, [spacingPx, opacity, gridColor]);
+  }, [spacingPx, opacity, gridColor, gridColorWithOpacity]);
 
   const patternClass = PATTERN_CLASSES[pattern];
 
