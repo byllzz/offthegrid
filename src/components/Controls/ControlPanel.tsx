@@ -45,19 +45,30 @@ const patternIcons: Record<PatternType, React.ReactNode> = {
 };
 
 export const ControlPanel: React.FC = () => {
-  const { pattern, setPattern, spacing, setSpacing, opacity, setOpacity, unit, setUnit } =
-    useGridStore();
+  const {
+    pattern,
+    setPattern,
+    spacing,
+    setSpacing,
+    opacity,
+    setOpacity,
+    unit,
+    setUnit,
+    gridColor,
+    setGridColor,
+  } = useGridStore();
 
   const config = UNIT_CONFIG[unit];
 
   const displayValue = unit === 'in' ? spacing.toFixed(4) : spacing.toFixed(2);
 
   const colorPreviewStyle = {
-    backgroundColor: `rgba(127, 140, 141, ${opacity})`,
+    backgroundColor: gridColor,
+    opacity: opacity,
   };
 
   return (
-    <div className="fixed left-1/2 top-0 -translate-x-1/2 z-[100]  bg-white w-full max-w-[440px] mx-auto  shadow-lg px-[30px] pt-5 pb-[20px] text-center  print:hidden">
+    <div className="fixed left-1/2 top-0 -translate-x-1/2 z-[100] bg-white w-full max-w-[440px] mx-auto shadow-lg px-[30px] pt-5 pb-[20px] text-center print:hidden">
       {/* Header */}
       <div className="flex items-center justify-center gap-3 mb-6">
         <h1 className="text-base text-[#333] font-normal">
@@ -102,6 +113,8 @@ export const ControlPanel: React.FC = () => {
           value={opacity}
           onChange={setOpacity}
           colorPreviewStyle={colorPreviewStyle}
+          color={gridColor}
+          onColorChange={setGridColor}
         />
       </div>
 

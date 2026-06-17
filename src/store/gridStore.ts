@@ -8,12 +8,14 @@ interface GridStore extends GridConfig {
   setSpacing: (spacing: number) => void;
   setOpacity: (opacity: number) => void;
   setUnit: (unit: UnitType) => void;
+  setGridColor: (color: string) => void;
   toggleRuler: () => void;
   resetToDefault: () => void;
 }
 
 const DEFAULT_PATTERN: PatternType = 'dot';
 const DEFAULT_UNIT: UnitType = 'mm';
+const DEFAULT_COLOR = '#7f8c8d';
 
 // Build default config from constants
 const defaultConfig: GridConfig = {
@@ -22,6 +24,7 @@ const defaultConfig: GridConfig = {
   opacity: 0.4,
   unit: DEFAULT_UNIT,
   showRuler: true,
+  gridColor: DEFAULT_COLOR,
 };
 
 export const useGridStore = create<GridStore>()(
@@ -30,8 +33,6 @@ export const useGridStore = create<GridStore>()(
       ...defaultConfig,
 
       setPattern: pattern => {
-        // Reset spacing to default for that pattern, but keep current unit
-        // const unit = get().unit;
         const defaultSpacing = PATTERN_INFO[pattern].defaultSpacing;
         set({
           pattern,
@@ -42,6 +43,8 @@ export const useGridStore = create<GridStore>()(
       setSpacing: spacing => set({ spacing }),
 
       setOpacity: opacity => set({ opacity }),
+
+      setGridColor: gridColor => set({ gridColor }),
 
       setUnit: unit => {
         const currentSpacing = get().spacing;
@@ -67,6 +70,7 @@ export const useGridStore = create<GridStore>()(
           opacity: 0.4,
           unit: defaultUnit,
           showRuler: true,
+          gridColor: DEFAULT_COLOR,
         });
       },
     }),

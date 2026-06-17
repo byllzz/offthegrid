@@ -8,6 +8,7 @@ export interface GridConfig {
   opacity: number;
   unit: UnitType;
   showRuler: boolean;
+  gridColor: string;
 }
 
 export interface RulerMark {

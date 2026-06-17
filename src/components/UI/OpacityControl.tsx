@@ -1,18 +1,32 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 interface OpacityControlProps {
   value: number;
   onChange: (value: number) => void;
   colorPreviewStyle: React.CSSProperties;
+  color?: string;
+  onColorChange?: (color: string) => void;
 }
 
 export const OpacityControl: React.FC<OpacityControlProps> = ({
   value,
   onChange,
   colorPreviewStyle,
+  color = '#7f8c8d',
+  onColorChange,
 }) => {
+  const colorInputRef = useRef<HTMLInputElement>(null);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(parseFloat(e.target.value));
+  };
+
+  const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onColorChange?.(e.target.value);
+  };
+
+  const handleColorClick = () => {
+    colorInputRef.current?.click();
   };
 
   return (
@@ -38,10 +52,31 @@ export const OpacityControl: React.FC<OpacityControlProps> = ({
         value={value}
         onChange={handleChange}
       />
-      <div
-        className="w-[45px] h-7 rounded-sm border border-[#ccc] shrink-0"
-        style={colorPreviewStyle}
-      />
+      <div className="flex items-center gap-2 shrink-0">
+        <div
+          className="w-[45px] h-7 rounded-sm border border-[#ccc] cursor-pointer hover:opacity-80 transition-opacity"
+          style={colorPreviewStyle}
+          onClick={handleColorClick}
+          title="Click to change color"
+        />
+        <button
+          className="w-7 h-7 rounded-sm border border-[#ccc] bg-white hover:bg-[#f5f5f5] flex items-center justify-center text-[#555] transition-colors shrink-0"
+          onClick={handleColorClick}
+          title="Change color"
+          type="button"
+        >
+          <svg viewBox="0 0 24 24" className="size-4 fill-current">
+            <path d="M12 3L5 9v8h14V9l-7-6zm0 2.5l4.5 3.5H15v4h-6v-4H7.5L12 5.5zM5 19v2h14v-2H5z" />
+          </svg>
+        </button>
+        <input
+          ref={colorInputRef}
+          type="color"
+          className="hidden"
+          value={color}
+          onChange={handleColorChange}
+        />
+      </div>
     </div>
   );
 };
