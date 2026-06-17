@@ -1,9 +1,9 @@
 import type { PatternRenderer } from '../../../types/grid';
 
-export const drawDotGrid: PatternRenderer = (ctx, width, height, spacingPx, opacity) => {
+export const drawDotGrid: PatternRenderer = (ctx, width, height, spacingPx, opacity, color) => {
   ctx.save();
   ctx.globalAlpha = opacity;
-  ctx.fillStyle = '#000000';
+  ctx.fillStyle = color;
 
   const cols = Math.ceil(width / spacingPx) + 1;
   const rows = Math.ceil(height / spacingPx) + 1;

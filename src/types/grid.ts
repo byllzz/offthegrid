@@ -24,5 +24,6 @@ export interface PatternRenderer {
     height: number,
     spacingPx: number,
     opacity: number,
+    gridColor: string,
   ): void;
 }

@@ -1,12 +1,11 @@
 import type { PatternRenderer } from '../../../types/grid';
 
-export const drawLinedPaper: PatternRenderer = (ctx, width, height, spacingPx, opacity) => {
+export const drawLinedPaper: PatternRenderer = (ctx, width, height, spacingPx, opacity, color) => {
   ctx.save();
   ctx.globalAlpha = opacity;
-  ctx.strokeStyle = '#000000';
+  ctx.strokeStyle = color;
   ctx.lineWidth = 0.5;
 
-  // Horizontal lines only, with a thicker line at every 5th line (like a margin)
   const lineHeight = spacingPx;
   for (let y = lineHeight; y < height; y += lineHeight) {
     const isMajor = Math.round(y / lineHeight) % 5 === 0;
@@ -17,10 +16,10 @@ export const drawLinedPaper: PatternRenderer = (ctx, width, height, spacingPx, o
     ctx.stroke();
   }
 
-  // Optional vertical margin line (red or dotted)
+  // Margin line (optional, using same color with half opacity)
   ctx.lineWidth = 0.5;
   ctx.setLineDash([4, 4]);
-  ctx.strokeStyle = '#ff0000';
+  ctx.strokeStyle = color;
   ctx.globalAlpha = opacity * 0.5;
   ctx.beginPath();
   ctx.moveTo(width * 0.2, 0);

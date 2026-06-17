@@ -32,13 +32,8 @@ export const useGridStore = create<GridStore>()(
     (set, get) => ({
       ...defaultConfig,
 
-      setPattern: pattern => {
-        const defaultSpacing = PATTERN_INFO[pattern].defaultSpacing;
-        set({
-          pattern,
-          spacing: defaultSpacing,
-        });
-      },
+      // ✅ Only change pattern, keep spacing unchanged
+      setPattern: pattern => set({ pattern }),
 
       setSpacing: spacing => set({ spacing }),
 
@@ -61,6 +56,7 @@ export const useGridStore = create<GridStore>()(
 
       toggleRuler: () => set(state => ({ showRuler: !state.showRuler })),
 
+      // Reset still uses default spacing for the default pattern (optional)
       resetToDefault: () => {
         const defaultPattern = DEFAULT_PATTERN;
         const defaultUnit = DEFAULT_UNIT;

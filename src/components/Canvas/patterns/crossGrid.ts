@@ -1,9 +1,9 @@
 import type { PatternRenderer } from '../../../types/grid';
 
-export const drawCrossGrid: PatternRenderer = (ctx, width, height, spacingPx, opacity) => {
+export const drawCrossGrid: PatternRenderer = (ctx, width, height, spacingPx, opacity, color) => {
   ctx.save();
   ctx.globalAlpha = opacity;
-  ctx.strokeStyle = '#000000';
+  ctx.strokeStyle = color;
   ctx.lineWidth = 0.5;
 
   const half = spacingPx / 2;
@@ -13,7 +13,6 @@ export const drawCrossGrid: PatternRenderer = (ctx, width, height, spacingPx, op
     for (let y = 0; y <= height; y += spacingPx) {
       const cx = x + half;
       const cy = y + half;
-      // Draw cross: horizontal and vertical lines
       ctx.beginPath();
       ctx.moveTo(cx - crossSize, cy);
       ctx.lineTo(cx + crossSize, cy);

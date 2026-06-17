@@ -1,18 +1,15 @@
 import type { PatternRenderer } from '../../../types/grid';
 
-export const drawMusicStaff: PatternRenderer = (ctx, width, height, spacingPx, opacity) => {
+export const drawMusicStaff: PatternRenderer = (ctx, width, height, spacingPx, opacity, color) => {
   ctx.save();
   ctx.globalAlpha = opacity;
-  ctx.strokeStyle = '#000000';
+  ctx.strokeStyle = color;
   ctx.lineWidth = 0.8;
 
-  // A music staff has 5 lines, spaced equally.
-  // spacingPx here represents the distance between lines.
   const lineSpacing = spacingPx;
-  const staffHeight = 4 * lineSpacing; // 5 lines => 4 gaps
-  const staffCount = Math.ceil(height / (staffHeight + lineSpacing * 2)); // with some padding
+  const staffHeight = 4 * lineSpacing;
+  const staffCount = Math.ceil(height / (staffHeight + lineSpacing * 2));
 
-  // Draw each staff
   for (let s = 0; s < staffCount; s++) {
     const startY = s * (staffHeight + lineSpacing * 2) + lineSpacing * 2;
     for (let i = 0; i < 5; i++) {
@@ -24,9 +21,6 @@ export const drawMusicStaff: PatternRenderer = (ctx, width, height, spacingPx, o
       ctx.stroke();
     }
   }
-
-  // Optionally add a treble clef placeholder (just a simple shape)
-  // For simplicity, we skip it.
 
   ctx.restore();
 };

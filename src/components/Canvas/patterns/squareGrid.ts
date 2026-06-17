@@ -1,12 +1,11 @@
 import type { PatternRenderer } from '../../../types/grid';
 
-export const drawSquareGrid: PatternRenderer = (ctx, width, height, spacingPx, opacity) => {
+export const drawSquareGrid: PatternRenderer = (ctx, width, height, spacingPx, opacity, color) => {
   ctx.save();
   ctx.globalAlpha = opacity;
-  ctx.strokeStyle = '#000000';
+  ctx.strokeStyle = color;
   ctx.lineWidth = 0.5;
 
-  // Vertical lines
   for (let x = 0; x <= width; x += spacingPx) {
     ctx.beginPath();
     ctx.moveTo(x, 0);
@@ -14,7 +13,6 @@ export const drawSquareGrid: PatternRenderer = (ctx, width, height, spacingPx, o
     ctx.stroke();
   }
 
-  // Horizontal lines
   for (let y = 0; y <= height; y += spacingPx) {
     ctx.beginPath();
     ctx.moveTo(0, y);
