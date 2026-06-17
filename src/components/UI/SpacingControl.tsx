@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 interface SpacingControlProps {
   value: number;
@@ -21,8 +21,42 @@ export const SpacingControl: React.FC<SpacingControlProps> = ({
   onChange,
   onUnitToggle,
 }) => {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [inputValue, setInputValue] = useState(displayValue);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (isEditing && inputRef.current) {
+      inputRef.current.focus();
+      inputRef.current.select();
+    }
+  }, [isEditing]);
+
+  const handleRangeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(parseFloat(e.target.value));
+  };
+
+  const handleValueClick = () => {
+    setInputValue(displayValue);
+    setIsEditing(true);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleInputBlur = () => {
+    setIsEditing(false);
+    const numValue = parseFloat(inputValue);
+    if (!isNaN(numValue) && numValue >= min && numValue <= max) {
+      onChange(numValue);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleInputBlur();
+    }
   };
 
   return (
@@ -46,14 +80,29 @@ export const SpacingControl: React.FC<SpacingControlProps> = ({
         max={max}
         step={step}
         value={value}
-        onChange={handleChange}
+        onChange={handleRangeChange}
       />
       <div className="flex items-center border border-[#ccc] rounded-sm overflow-hidden bg-white min-w-[95px] justify-between shrink-0">
-        <span className="px-2 py-1 text-[13px] text-[#333] font-bold text-right w-[60px]">
-          {displayValue}
-        </span>
+        {isEditing ? (
+          <input
+            ref={inputRef}
+            type="text"
+            className="px-2 py-1 text-[13px] text-[#333] font-bold text-right w-[60px] outline-none cursor-auto"
+            value={inputValue}
+            onChange={handleInputChange}
+            onBlur={handleInputBlur}
+            onKeyDown={handleKeyDown}
+          />
+        ) : (
+          <span
+            className="px-2 py-1 text-[13px] text-[#333] font-bold text-right w-[60px]"
+            onClick={handleValueClick}
+          >
+            {displayValue}
+          </span>
+        )}
         <button
-          className="bg-[#eaeaea] border-none border-l border-[#ccc] px-2 py-1.5 text-[11px] font-bold cursor-pointer text-[#555] hover:bg-[#dcdcdc] w-[35px] transition-colors"
+          className="bg-[#eaeaea] border-none border-l border-[#ccc] px-2 py-1.5 text-[11px] font-bold cursor-pointer text-[#555] hover:bg-[#dcdcdc] w-[35px] transition-colors shrink-0"
           type="button"
           onClick={onUnitToggle}
         >
