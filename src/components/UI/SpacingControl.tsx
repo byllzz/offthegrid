@@ -42,20 +42,24 @@ export const SpacingControl: React.FC<SpacingControlProps> = ({
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-  };
+    const newValue = e.target.value;
+    setInputValue(newValue);
 
-  const handleInputBlur = () => {
-    setIsEditing(false);
-    const numValue = parseFloat(inputValue);
+    // Live apply: parse and update if valid
+    const numValue = parseFloat(newValue);
     if (!isNaN(numValue) && numValue >= min && numValue <= max) {
       onChange(numValue);
     }
   };
 
+  const handleInputBlur = () => {
+    setIsEditing(false);
+    // No need to call onChange again; it already updated live
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      handleInputBlur();
+      setIsEditing(false);
     }
   };
 
@@ -95,7 +99,7 @@ export const SpacingControl: React.FC<SpacingControlProps> = ({
           />
         ) : (
           <span
-            className="px-2 py-1 text-[13px] text-[#333] font-bold text-right w-[60px]"
+            className="px-2 py-1 text-[13px] text-[#333] font-bold text-right w-[60px] cursor-normal"
             onClick={handleValueClick}
           >
             {displayValue}
