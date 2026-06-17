@@ -13,7 +13,7 @@ export const Ruler: React.FC = () => {
 
   return (
     <div
-      className="bg-[#ffe168]  w-full h-[100px] fixed top-0 left-0 flex justify-between items-center px-[2px] text-[11px] z-10 print:hidden shadow-md"
+      className="bg-[#ffd633]  w-full h-[100px] fixed top-0 left-0 flex justify-between items-center px-[2px] text-[11px] z-10 print:hidden shadow-md"
       style={{
         backgroundImage: `url("${topInchesSvg}"), url("${bottomMmSvg}")`,
         backgroundPosition: 'top left, bottom left',

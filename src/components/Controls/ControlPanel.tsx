@@ -2,6 +2,9 @@ import React from 'react';
 import { useGridStore } from '../../store/gridStore';
 import { PATTERN_INFO, UNIT_CONFIG } from '../../utils/constants';
 import type { PatternType } from '../../types/grid';
+import { SpacingControl } from '../UI/SpacingControl';
+import { OpacityControl } from '../UI/OpacityControl';
+import { PrintButton } from '../UI/PrintButton';
 
 const patternIcons: Record<PatternType, React.ReactNode> = {
   dot: (
@@ -47,18 +50,6 @@ export const ControlPanel: React.FC = () => {
 
   const config = UNIT_CONFIG[unit];
 
-  const handleSpacingChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSpacing(parseFloat(e.target.value));
-  };
-
-  const handleOpacityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setOpacity(parseFloat(e.target.value));
-  };
-
-  const toggleUnit = () => {
-    setUnit(unit === 'in' ? 'mm' : 'in');
-  };
-
   const displayValue = unit === 'in' ? spacing.toFixed(4) : spacing.toFixed(2);
 
   const colorPreviewStyle = {
@@ -96,79 +87,25 @@ export const ControlPanel: React.FC = () => {
       </div>
 
       <div className="flex flex-col items-start border border-[#666666]/80 rounded-[5px] w-full px-6 py-4 gap-[25px]">
-        {/* Spacing control */}
-        <div className="flex items-center gap-[15px] w-full">
-          <input
-            type="range"
-            className="flex-1 h-1.5 bg-[#ddd] rounded-[3px] outline-none appearance-none cursor-pointer
-            [&::-webkit-slider-thumb]:appearance-none
-            [&::-webkit-slider-thumb]:size-4
-            [&::-webkit-slider-thumb]:h-6
-            [&::-webkit-slider-thumb]:bg-[#4a4a4a]
-            [&::-webkit-slider-thumb]:rounded-[2px]
-            [&::-webkit-slider-thumb]:cursor-pointer
-            [&::-moz-range-thumb]:size-4
-            [&::-moz-range-thumb]:h-6
-            [&::-moz-range-thumb]:bg-[#4a4a4a]
-            [&::-moz-range-thumb]:rounded-[2px]
-            [&::-moz-range-thumb]:border-none
-            [&::-moz-range-thumb]:cursor-pointer"
-            min={config.min}
-            max={config.max}
-            step={config.step}
-            value={spacing}
-            onChange={handleSpacingChange}
-          />
-          <div className="flex items-center border border-[#ccc] rounded-sm overflow-hidden bg-white min-w-[95px] justify-between shrink-0">
-            <span className="px-2 py-1 text-[13px] text-[#333] font-bold text-right w-[60px]">
-              {displayValue}
-            </span>
-            <button
-              className="bg-[#eaeaea] border-none border-l border-[#ccc] px-2 py-1.5 text-[11px] font-bold cursor-pointer text-[#555] hover:bg-[#dcdcdc] w-[35px] transition-colors"
-              type="button"
-              onClick={toggleUnit}
-            >
-              {unit}
-            </button>
-          </div>
-        </div>
+        <SpacingControl
+          value={spacing}
+          displayValue={displayValue}
+          unit={unit}
+          min={config.min}
+          max={config.max}
+          step={config.step}
+          onChange={setSpacing}
+          onUnitToggle={() => setUnit(unit === 'in' ? 'mm' : 'in')}
+        />
 
-        {/* Opacity control */}
-        <div className="flex items-center gap-[15px] w-full">
-          <input
-            type="range"
-            className="flex-1 h-1.5 bg-[#ddd] rounded-[3px] outline-none appearance-none cursor-pointer
-            [&::-webkit-slider-thumb]:appearance-none
-            [&::-webkit-slider-thumb]:size-4
-            [&::-webkit-slider-thumb]:h-6
-            [&::-webkit-slider-thumb]:bg-[#4a4a4a]
-            [&::-webkit-slider-thumb]:rounded-[2px]
-            [&::-webkit-slider-thumb]:cursor-pointer
-            [&::-moz-range-thumb]:size-4
-            [&::-moz-range-thumb]:h-6
-            [&::-moz-range-thumb]:bg-[#4a4a4a]
-            [&::-moz-range-thumb]:rounded-[2px]
-            [&::-moz-range-thumb]:border-none
-            [&::-moz-range-thumb]:cursor-pointer"
-            min="0.05"
-            max="1.00"
-            step="0.01"
-            value={opacity}
-            onChange={handleOpacityChange}
-          />
-          <div
-            className="w-[45px] h-7 rounded-sm border border-[#ccc] shrink-0"
-            style={colorPreviewStyle}
-          />
-        </div>
+        <OpacityControl
+          value={opacity}
+          onChange={setOpacity}
+          colorPreviewStyle={colorPreviewStyle}
+        />
       </div>
-      {/* Print button */}
-      <button
-        className="w-full py-3.5 w-full max-w-[180px] mt-6 text-lg font-bold rounded-sm cursor-pointer  shadow-sm transition-colors bg-[#f1c40f] hover:bg-[#f39c12] text-[#333] border-none"
-        onClick={() => window.print()}
-      >
-        PRINT
-      </button>
+
+      <PrintButton onClick={() => window.print()} />
     </div>
   );
 };
