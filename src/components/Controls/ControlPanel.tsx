@@ -9,7 +9,10 @@ import { PrintButton } from '../UI/PrintButton';
 const patternIcons: Record<PatternType, React.ReactNode> = {
   dot: (
     <svg viewBox="0 0 24 24" className="size-6">
-      <circle cx="12" cy="12" r="2" fill="#555" />
+      <circle cx="6" cy="6" r="2" fill="#555" />
+      <circle cx="18" cy="6" r="2" fill="#555" />
+      <circle cx="6" cy="18" r="2" fill="#555" />
+      <circle cx="18" cy="18" r="2" fill="#555" />
     </svg>
   ),
   lined: (

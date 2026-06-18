@@ -8,8 +8,15 @@ function App() {
       <Ruler />
       <GridBackground />
       <ControlPanel />
-      <div className="fixed bottom-[15px] font-normal right-5 text-[16px] text-[#222] z-[100] print:hidden">
-        designed and developed by <strong className="text-[#000000]">Bilal Malik</strong>
+      <div className="fixed bottom-[10px] font-normal right-5 text-[15px]  text-[#222] z-[100] print:hidden">
+        designed and developed by{' '}
+        <a
+          href="https://github.com/byllzz"
+          target="_blank"
+          className="text-[#000000] font-black text-[18px] underline font-script"
+        >
+          Bilal Malik
+        </a>
       </div>
     </>
   );
