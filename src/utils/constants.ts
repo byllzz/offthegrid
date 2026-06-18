@@ -7,6 +7,13 @@ export const PATTERN_INFO: Record<
   dot: { name: 'Dot Grid', icon: '⚫', defaultSpacing: 5 },
   lined: { name: 'Lined Paper', icon: '📝', defaultSpacing: 10 },
   square: { name: 'Square Grid', icon: '⬛', defaultSpacing: 5 },
+  isometric: { name: 'Isometric Grid', icon: '◇', defaultSpacing: 20 },
+  hex: { name: 'Hex Grid', icon: '⬡', defaultSpacing: 24 },
+  cross: { name: 'Cross Grid', icon: '✛', defaultSpacing: 12 },
+  graph: { name: 'Graph Paper', icon: '▦', defaultSpacing: 8 },
+  dotLarge: { name: 'Large Dot Grid', icon: '●', defaultSpacing: 16 },
+  music: { name: 'Music Staff', icon: '♪', defaultSpacing: 10 },
+  isometricDots: { name: 'Isometric Dots', icon: '⠿', defaultSpacing: 18 },
 };
 
 export const UNIT_CONFIG: Record<
