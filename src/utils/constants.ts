@@ -5,11 +5,8 @@ export const PATTERN_INFO: Record<
   { name: string; icon: string; defaultSpacing: number }
 > = {
   dot: { name: 'Dot Grid', icon: '⚫', defaultSpacing: 5 },
-  isometric: { name: 'Isometric', icon: '🔺', defaultSpacing: 8 },
   lined: { name: 'Lined Paper', icon: '📝', defaultSpacing: 10 },
   square: { name: 'Square Grid', icon: '⬛', defaultSpacing: 5 },
-  cross: { name: 'Cross Grid', icon: '✚', defaultSpacing: 5 },
-  music: { name: 'Music Staff', icon: '🎵', defaultSpacing: 6 },
 };
 
 export const UNIT_CONFIG: Record<

@@ -1,4 +1,4 @@
-import type { PatternRenderer } from '../../../types/grid';
+import type { PatternRenderer } from '../types/grid';
 
 export const drawLinedPaper: PatternRenderer = (ctx, width, height, spacingPx, opacity, color) => {
   ctx.save();
@@ -16,7 +16,7 @@ export const drawLinedPaper: PatternRenderer = (ctx, width, height, spacingPx, o
     ctx.stroke();
   }
 
-  // Margin line (optional, using same color with half opacity)
+  // Margin line
   ctx.lineWidth = 0.5;
   ctx.setLineDash([4, 4]);
   ctx.strokeStyle = color;

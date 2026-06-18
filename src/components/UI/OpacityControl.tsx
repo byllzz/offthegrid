@@ -33,16 +33,16 @@ export const OpacityControl: React.FC<OpacityControlProps> = ({
     <div className="flex items-center gap-[15px] w-full">
       <input
         type="range"
-        className="flex-1 h-1.5 bg-[#ddd] rounded-[3px] outline-none appearance-none cursor-pointer
+        className="flex-1 h-1 bg-[#000000] outline-none appearance-none cursor-pointer
         [&::-webkit-slider-thumb]:appearance-none
-        [&::-webkit-slider-thumb]:size-4
-        [&::-webkit-slider-thumb]:h-6
-        [&::-webkit-slider-thumb]:bg-[#4a4a4a]
+        [&::-webkit-slider-thumb]:size-6
+        [&::-webkit-slider-thumb]:h-8
+        [&::-webkit-slider-thumb]:bg-[#000000]
         [&::-webkit-slider-thumb]:rounded-[2px]
         [&::-webkit-slider-thumb]:cursor-pointer
-        [&::-moz-range-thumb]:size-4
-        [&::-moz-range-thumb]:h-6
-        [&::-moz-range-thumb]:bg-[#4a4a4a]
+        [&::-moz-range-thumb]:size-6
+        [&::-moz-range-thumb]:h-8
+        [&::-moz-range-thumb]:bg-[#000000]
         [&::-moz-range-thumb]:rounded-[2px]
         [&::-moz-range-thumb]:border-none
         [&::-moz-range-thumb]:cursor-pointer"
@@ -54,7 +54,7 @@ export const OpacityControl: React.FC<OpacityControlProps> = ({
       />
       <div className="flex items-center gap-2 shrink-0">
         <div
-          className="w-[45px] h-7 rounded-sm border border-[#ccc] cursor-pointer hover:opacity-80 transition-opacity"
+          className="w-[70px] h-7 rounded-sm border border-[#ccc] cursor-pointer hover:opacity-80 transition-opacity"
           style={colorPreviewStyle}
           onClick={handleColorClick}
           title="Click to change color"

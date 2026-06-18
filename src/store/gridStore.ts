@@ -17,11 +17,11 @@ const DEFAULT_PATTERN: PatternType = 'dot';
 const DEFAULT_UNIT: UnitType = 'mm';
 const DEFAULT_COLOR = '#7f8c8d';
 
-// Build default config from constants
+// default config from constants
 const defaultConfig: GridConfig = {
   pattern: DEFAULT_PATTERN,
   spacing: PATTERN_INFO[DEFAULT_PATTERN].defaultSpacing,
-  opacity: 0.4,
+  opacity: 0.8,
   unit: DEFAULT_UNIT,
   showRuler: true,
   gridColor: DEFAULT_COLOR,
@@ -32,7 +32,7 @@ export const useGridStore = create<GridStore>()(
     (set, get) => ({
       ...defaultConfig,
 
-      // ✅ Only change pattern, keep spacing unchanged
+      //  Only change pattern, keep spacing unchanged
       setPattern: pattern => set({ pattern }),
 
       setSpacing: spacing => set({ spacing }),
@@ -56,7 +56,7 @@ export const useGridStore = create<GridStore>()(
 
       toggleRuler: () => set(state => ({ showRuler: !state.showRuler })),
 
-      // Reset still uses default spacing for the default pattern (optional)
+      // Reset still uses default spacing for the default pattern
       resetToDefault: () => {
         const defaultPattern = DEFAULT_PATTERN;
         const defaultUnit = DEFAULT_UNIT;

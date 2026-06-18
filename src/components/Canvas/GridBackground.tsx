@@ -22,7 +22,6 @@ export const GridBackground: React.FC = () => {
   React.useEffect(() => {
     document.documentElement.style.setProperty('--grid-spacing', `${spacingPx}px`);
     document.documentElement.style.setProperty('--grid-color', gridColorWithOpacity);
-    // Keep --opacity for any other usage (though not strictly needed now)
     document.documentElement.style.setProperty('--opacity', String(opacity));
   }, [spacingPx, opacity, gridColor, gridColorWithOpacity]);
 

@@ -1,4 +1,4 @@
-export type PatternType = 'dot' | 'isometric' | 'lined' | 'square' | 'cross' | 'music';
+export type PatternType = 'dot' | 'lined' | 'square';
 
 export type UnitType = 'in' | 'mm';
 

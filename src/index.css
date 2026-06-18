@@ -10,20 +10,16 @@
   --bg-color: #ffffff;
 }
 
-/* Global styles */
-* {
-  box-sizing: border-box;
-  font-family: "Outfit", serif;
-}
 
 body {
   background-color: #f7f7f7;
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
+  font-family: "Outfit", serif;
 }
 
-/* --- CSS Pattern Implementations --- */
+/* CSS Pattern Implementations */
 .p-dots {
   background-image: radial-gradient(circle, var(--grid-color) 1.5px, transparent 1.5px);
   background-size: var(--grid-spacing) var(--grid-spacing);
@@ -42,47 +38,8 @@ body {
   background-size: var(--grid-spacing) var(--grid-spacing);
 }
 
-.p-cross {
-  background-image:
-    linear-gradient(to right, var(--grid-color) 3px, transparent 3px),
-    linear-gradient(to bottom, var(--grid-color) 3px, transparent 3px);
-  background-size: var(--grid-spacing) var(--grid-spacing);
-  background-position: -1px -1px;
-}
 
-/* .p-iso {
-  background-image:
-    linear-gradient(60deg, var(--grid-color) 1px, transparent 1px),
-    linear-gradient(120deg, var(--grid-color) 1px, transparent 1px),
-    linear-gradient(0deg, var(--grid-color) 1px, transparent 1px);
-  background-size: var(--grid-spacing) var(--grid-spacing);
-  background-position: 0 0, 0 0, 0 0;
-} */
-
-.p-iso {
-  background-size: var(--grid-spacing) calc(var(--grid-spacing) * 0.866025);
-  background-image:
-    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px),
-    linear-gradient(30deg, transparent 49%, var(--grid-color) 49%, var(--grid-color) 51%, transparent 51%),
-    linear-gradient(150deg, transparent 49%, var(--grid-color) 49%, var(--grid-color) 51%, transparent 51%);
-  background-position: 0 0, 0 0, 0 0;
-}
-
-
-.p-music {
-  background-image: linear-gradient(to bottom,
-      var(--grid-color) 1px, transparent 1px,
-      transparent 4px, var(--grid-color) 5px,
-      transparent 5px, transparent 8px,
-      var(--grid-color) 9px, transparent 9px,
-      transparent 12px, var(--grid-color) 13px,
-      transparent 13px, transparent 16px,
-      var(--grid-color) 17px, transparent 17px,
-      transparent 32px);
-  background-size: 100% calc(var(--grid-spacing) * 2);
-}
-
-/* --- PRINT OVERRIDES --- */
+/* PRINT Logic */
 @media print {
 
   html,
