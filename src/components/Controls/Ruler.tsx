@@ -31,20 +31,25 @@ export const Ruler: React.FC = () => {
         backgroundSize: `${topSize}, ${bottomSize}`,
       }}
     >
-      {/* Labels logic... */}
+      {/* Left Labels: horizontal line appears on the RIGHT of the active unit text */}
       <div className="flex flex-col gap-[11px] leading-none text-left tracking-wide relative left-[10px]">
-        <span className="text-[15px] uppercase text-[#666666]/80 font-medium tracking-tight">
+        <span className="text-[15px] uppercase text-[#666666]/80 font-medium tracking-tight flex items-center gap-2">
           {isInch ? 'INCHES' : 'MILLIMETRES'}
+          <span className="w-5 h-[1.5px] bg-[#666666] rounded-sm" />
         </span>
-        <span className="text-[15px] uppercase text-[#666666]/80 font-medium tracking-tight">
+        <span className="text-[15px] uppercase text-[#666666]/80 font-medium tracking-tight flex items-center gap-2">
           {isInch ? 'MILLIMETRES' : 'INCHES'}
+          {/* No line for inactive unit */}
         </span>
       </div>
+
+      {/* Right Labels: horizontal line appears on the LEFT of the active unit text */}
       <div className="flex flex-col gap-[11px] leading-none text-right tracking-wide relative right-[10px]">
-        <span className="text-[15px] uppercase text-[#666666]/80 font-medium tracking-tight">
+        <span className="text-[15px] uppercase text-[#666666]/80 font-medium tracking-tight flex items-center justify-end gap-2">
+          <span className="w-5 h-[1.5px] bg-[#666666] rounded-sm" />
           {isInch ? 'INCHES' : 'MILLIMETRES'}
         </span>
-        <span className="text-[15px] uppercase text-[#666666]/80 font-medium tracking-tight">
+        <span className="text-[15px] uppercase text-[#666666]/80 font-medium tracking-tight flex items-center justify-end gap-2">
           {isInch ? 'MILLIMETRES' : 'INCHES'}
         </span>
       </div>
