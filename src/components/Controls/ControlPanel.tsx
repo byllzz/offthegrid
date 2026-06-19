@@ -146,7 +146,14 @@ export const ControlPanel: React.FC = () => {
       <div className="flex items-center justify-center gap-3 mb-2!">
         <img src={favicon} className="h-8 w-8" alt="" />
         <h1 className="text-base text-[#333] font-normal">
-          Make your own grid paper with <strong className="font-bold">offthegrid</strong>
+          Make your own grid paper with{' '}
+          <a
+            href="https://gridpaper.vercel.app"
+            rel="noopener noreferrer"
+            className="font-bold font-script text-2xl underline relative left-1"
+          >
+            offthegrid
+          </a>
         </h1>
       </div>
 
