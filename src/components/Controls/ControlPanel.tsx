@@ -139,16 +139,16 @@ export const ControlPanel: React.FC = () => {
   };
 
   return (
-    <div className="fixed left-1/2 top-0 -translate-x-1/2 z-[100] bg-white w-full max-w-[480px] mx-auto shadow-lg px-[50px] py-10 text-center print:hidden">
+    <div className="fixed left-1/2 top-0 -translate-x-1/2 z-[100] bg-white w-full max-w-[480px] mx-auto shadow-2xl px-[50px] py-6 text-center print:hidden">
       {/* Header */}
-      <div className="flex items-center justify-center gap-3 mb-6">
+      <div className="flex items-center justify-center gap-3 mb-2!">
         <h1 className="text-base text-[#333] font-normal">
-          Make your own grid paper with <em className="font-bold italic">Gridzzly</em>
+          Make your own grid paper with <em className="font-bold italic">offthegrid</em>
         </h1>
       </div>
 
       {/* Pattern buttons */}
-      <div className="flex justify-center gap-[10px] flex-wrap mt-[30px] mb-[20px]">
+      <div className="flex justify-center gap-[10px] flex-wrap mt-[30px] mb-[10px]">
         {Object.entries(PATTERN_INFO).map(([key, info]) => {
           const pKey = key as PatternType;
           const isActive = pattern === pKey;
@@ -157,7 +157,9 @@ export const ControlPanel: React.FC = () => {
               key={key}
               className={`p-1.5 rounded-sm border-2 transition-all duration-200 flex items-center justify-center
                 ${
-                  isActive ? 'border-[#333] bg-[#f2f2f2]' : 'border-transparent hover:bg-[#f2f2f2]'
+                  isActive
+                    ? 'border-mauve-800 bg-[#f2f2f2]'
+                    : 'border-transparent hover:bg-[#f2f2f2]'
                 }`}
               onClick={() => setPattern(pKey)}
               title={info.name}
@@ -169,7 +171,7 @@ export const ControlPanel: React.FC = () => {
       </div>
 
       {/* UI Elements */}
-      <div className="flex flex-col items-start border border-[#666666]/80 rounded-[5px] w-full px-6 py-4 gap-[25px]">
+      <div className="flex flex-col items-start border-2 border-mauve-800 rounded-[5px] w-full px-6 py-4 gap-[25px]">
         <SpacingControl
           value={spacing}
           displayValue={displayValue}

@@ -67,16 +67,16 @@ export const SpacingControl: React.FC<SpacingControlProps> = ({
     <div className="flex items-center gap-[15px] w-full">
       <input
         type="range"
-        className="flex-1 h-1 bg-[#000000] outline-none appearance-none cursor-pointer
+        className="flex-1 h-1 bg-mauve-800 outline-none appearance-none cursor-pointer
         [&::-webkit-slider-thumb]:appearance-none
         [&::-webkit-slider-thumb]:size-6
         [&::-webkit-slider-thumb]:h-8
-        [&::-webkit-slider-thumb]:bg-[#000000]
+        [&::-webkit-slider-thumb]:bg-mauve-800
         [&::-webkit-slider-thumb]:rounded-[2px]
         [&::-webkit-slider-thumb]:cursor-pointer
         [&::-moz-range-thumb]:size-6
         [&::-moz-range-thumb]:h-8
-        [&::-moz-range-thumb]:bg-[#000000]
+        [&::-moz-range-thumb]:bg-mauve-800)
         [&::-moz-range-thumb]:rounded-[2px]
         [&::-moz-range-thumb]:border-none
         [&::-moz-range-thumb]:cursor-pointer"

@@ -4,20 +4,20 @@
 
 @theme {
   --font-script: "Story Script", sans-serif;
+  --primary-color: #ffd633;
 }
 
 /* Custom properties */
 :root {
   --grid-spacing: 18.9px;
   --opacity: 0.3;
-  --grid-color: #7f8c8d;
+  --grid-color: #000000;
   --bg-color: #ffffff;
 
 }
 
-
 body {
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
@@ -45,7 +45,7 @@ body {
 
 
 
-/* === Isometric grid === */
+/* Isometric grid  */
 .p-isometric {
   background-image:
     repeating-linear-gradient(30deg,
@@ -65,7 +65,7 @@ body {
       transparent var(--grid-spacing));
 }
 
-/* === Hex grid (approximation via 3 repeating gradients) === */
+/*  Hex grid (approximation via 3 repeating gradients)  */
 .p-hex {
   background-image:
     repeating-linear-gradient(60deg,
@@ -85,7 +85,7 @@ body {
       transparent var(--grid-spacing));
 }
 
-/* === Cross / plus grid === */
+/*  Cross / plus grid  */
 .p-cross {
   background-image:
     linear-gradient(to right,
@@ -109,7 +109,7 @@ body {
   background-size: var(--grid-spacing) var(--grid-spacing);
 }
 
-/* === Graph grid (major + minor lines, 5:1 ratio) === */
+/*  Graph grid (major + minor lines, 5:1 ratio)  */
 .p-graph {
   background-image:
     linear-gradient(to right, var(--grid-color) 1.2px, transparent 1.2px),
@@ -127,14 +127,14 @@ body {
     var(--grid-spacing) var(--grid-spacing);
 }
 
-/* === Large dot grid === */
+/*  Large dot grid  */
 .p-dots-large {
   background-image: radial-gradient(circle, var(--grid-color) 2.5px, transparent 2.5px);
   background-size: var(--grid-spacing) var(--grid-spacing);
   background-position: center;
 }
 
-/* === Music staff === */
+/*  Music staff  */
 .p-music {
   background-image: repeating-linear-gradient(to bottom,
       var(--grid-color) 0,
@@ -145,7 +145,7 @@ body {
   background-position: top calc(var(--grid-spacing) * 1.5) left 0;
 }
 
-/* === Isometric dots (staggered rows) === */
+/*  Isometric dots (staggered rows)  */
 .p-isometric-dots {
   background-image:
     radial-gradient(circle, var(--grid-color) 1.5px, transparent 1.5px),

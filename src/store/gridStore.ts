@@ -15,13 +15,14 @@ interface GridStore extends GridConfig {
 
 const DEFAULT_PATTERN: PatternType = 'dot';
 const DEFAULT_UNIT: UnitType = 'mm';
-const DEFAULT_COLOR = '#7f8c8d';
+const DEFAULT_COLOR = '#000000';
+// const DEFAULT_COLOR = '#7f8c8d';
 
 // default config from constants
 const defaultConfig: GridConfig = {
   pattern: DEFAULT_PATTERN,
   spacing: PATTERN_INFO[DEFAULT_PATTERN].defaultSpacing,
-  opacity: 0.8,
+  opacity: 1,
   unit: DEFAULT_UNIT,
   showRuler: true,
   gridColor: DEFAULT_COLOR,

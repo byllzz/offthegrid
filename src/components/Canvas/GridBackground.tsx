@@ -28,8 +28,6 @@ export const GridBackground: React.FC = () => {
   const patternClass = PATTERN_CLASSES[pattern];
 
   return (
-    <div
-      className={`grid-background fixed top-0 left-0 w-full h-full bg-white z-[1] ${patternClass}`}
-    />
+    <div className={`grid-background fixed top-0 left-0 w-full h-full z-[1] ${patternClass}`} />
   );
 };

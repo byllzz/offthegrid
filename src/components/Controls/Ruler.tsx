@@ -27,7 +27,7 @@ export const Ruler: React.FC = () => {
   return (
     <div
       key={unit}
-      className="bg-[#ffd633] w-full h-[100px] fixed top-0 left-0 flex justify-between items-center px-[2px] text-[11px] z-20 print:hidden shadow-md cursor-pointer"
+      className="bg-(--primary-color) w-full h-[100px] fixed top-0 left-0 flex justify-between items-center px-[2px] text-[11px] z-20 print:hidden shadow-md cursor-pointer "
       style={{
         backgroundImage: `url("${topScale}"), url("${bottomScale}")`,
         backgroundPosition: 'top left, bottom left',

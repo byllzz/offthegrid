@@ -31,15 +31,15 @@ export const UNIT_CONFIG: Record<
     label: 'mm',
     pxPerUnit: 3.779, // 1mm = 96/25.4 ≈ 3.779px
     defaultSpacing: 5,
-    min: 1,
-    max: 20,
+    min: 5,
+    max: 19,
     step: 0.5,
   },
   in: {
     label: 'in',
     pxPerUnit: 96, // standard web: 1 inch = 96px
     defaultSpacing: 0.2,
-    min: 0.05,
+    min: 0.1969,
     max: 1,
     step: 0.05,
   },
