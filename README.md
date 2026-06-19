@@ -36,7 +36,7 @@
 </p>
 
 <p align="center">
-  <img src="./public/preview.png" width="90%" alt="OffTheGrid Demo" />
+  <img src="./public/preview.gif" width="100%" alt="OffTheGrid Demo" />
 </p>
 
 <p align="center">
@@ -55,54 +55,100 @@ Whether you need dot grids for bullet journaling, square grids for sketching, is
 
 ---
 
+
 ## Why OffTheGrid?
 
-| Problem | Solution |
-|---------|----------|
-| Buying grid paper is expensive | Print unlimited sheets for free |
-| Limited pattern options | 10+ patterns to choose from |
-| Can't customize spacing or color | Full control over every detail |
-| Need specific units (mm/in) | Toggle between millimeters and inches |
-| Want to match your aesthetic | Change grid color and opacity |
+Traditional grid paper comes with limitations. You're limited to whatever patterns are available in stores, restricted to standard sizes, and often paying for an entire notebook when you only need a few sheets.
+
+**OffTheGrid** removes those limitations by putting you in complete control of your grid paper.
+
+No more compromises. Whether you're:
+
+*  A student sketching diagrams
+*  A designer prototyping layouts
+*  A musician composing on staff paper
+*  A bullet journal enthusiast creating custom spreads
+
+OffTheGrid adapts to **your workflow**, not the other way around.
+
+Print exactly what you need, when you need it, completely free.
 
 ---
 
-## Features
+# Features
 
-| 1. 10+ Patterns | 2. Customizable Spacing |
-|-----------------|-------------------------|
-| Dot Grid | Adjust spacing in mm or inches |
-| Lined Paper | Fine-tune with slider or manual input |
-| Square Grid | |
-| Isometric Grid | |
-| Hex Grid | |
-| Cross Grid | |
-| Graph Paper | |
-| Large Dot Grid | |
-| Music Staff | |
-| Isometric Dots | |
+##  10+ Grid Patterns
 
-| 3. Color & Opacity | 4. Unit Toggle |
-|--------------------|----------------|
-| Pick any grid color | Switch between mm and inches |
-| Adjust opacity (0.05 – 1.00) | Ruler updates automatically |
-| Reset to default with one click | |
+Choose from a growing collection of professionally designed grid patterns for creative, educational, and technical work.
 
-| 5. Print Ready | 6. Persistent Storage |
-|----------------|-----------------------|
-| One-click print | Settings saved in localStorage |
-| Optimized for printing | Pick up where you left off |
-| Clean print output | |
+- Dot Grid -Perfect for bullet journaling, sketching, and note-taking. Subtle dots provide guidance without distracting from your content.
+- Lined Paper -Classic ruled lines for writing, journaling, and everyday notes.
+- Square Grid - Standard graph paper for mathematics, plotting, and technical drawing.
+- Isometric Grid - Triangular grids for 3D sketches, architectural drawings, and isometric illustrations.
+
+- Hex Grid - Hexagonal layouts for tabletop games, maps, and geometric artwork.
+
+- Cross Grid - Crosshatch patterns designed for drafting and precision work.
+
+- Graph Paper - Traditional 5×5 graph paper featuring bold major lines and subtle minor divisions, ideal for mathematics and data plotting.
+
+- Large Dot Grid - Larger, more visible dots for bold journaling, planning, and heavy writing.
+
+- Music Staff - Five-line staff paper for composers, musicians, and music students.
+
+- Isometric Dots - An isometric dot layout for perspective drawing and 3D sketching.
+
+
+##  Customizable Spacing
+
+Adjust grid density with precision.
+
+* Interactive spacing slider
+* Direct numeric input
+* Millimeters (mm) and inches (in)
+* Instant ruler updates when switching units
+
+Create the exact spacing your project requires.
 
 ---
 
-## Demo
+##  Color & Opacity
 
-<p align="center">
-  <img src="./public/preview.png" width="100%" alt="OffTheGrid Screenshot" />
-</p>
+Personalize every sheet.
 
-> **Live Demo:** [gridpaper.vercel.app](https://gridpaper.vercel.app)
+* Choose any grid color
+* Adjust opacity from subtle to bold
+* One-click reset to default settings
+
+Whether you prefer barely visible guides or high-contrast grids, you're in control.
+
+---
+
+##  Print Ready
+
+Grid paper is made to be printed.
+
+With a single click:
+
+* Clean print output
+* No ads
+* No UI clutter
+* Sharp, accurate rendering
+
+Just your custom grid, ready for paper.
+
+---
+
+##  Persistent Storage
+
+Your preferences are automatically saved in your browser.
+
+* No account required
+* No sign-up
+* Settings persist between sessions
+* Resume exactly where you left off
+
+Everything is stored locally, keeping your workflow fast and private.
 
 ---
 
