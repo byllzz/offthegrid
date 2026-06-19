@@ -5,7 +5,7 @@
 <h1 align="center">OffTheGrid</h1>
 
 <p align="center">
-  <strong>Make your own grid paper — instantly.</strong><br />
+  <strong>Make your own grid paper - instantly.</strong><br />
   Choose from 10+ patterns, customize spacing, color, and opacity, then print.
 </p>
 
@@ -40,7 +40,7 @@
 </p>
 
 <p align="center">
-  <em>Choose a pattern, customize your grid, and print — all in one place.</em>
+  <em>Choose a pattern, customize your grid, and print - all in one place.</em>
 </p>
 
 ---
@@ -49,7 +49,7 @@
 
 **OffTheGrid** is a free online tool that lets you create custom grid paper in seconds.
 
-Whether you need dot grids for bullet journaling, square grids for sketching, isometric grids for 3D drawing, or music staff paper for composing — OffTheGrid has you covered.
+Whether you need dot grids for bullet journaling, square grids for sketching, isometric grids for 3D drawing, or music staff paper for composing - OffTheGrid has you covered.
 
 > **No sign-up. No ads. Just grid paper.**
 
@@ -75,29 +75,31 @@ Print exactly what you need, when you need it, completely free.
 
 ---
 
-# Features
-
 ##  10+ Grid Patterns
 
 Choose from a growing collection of professionally designed grid patterns for creative, educational, and technical work.
 
-- Dot Grid -Perfect for bullet journaling, sketching, and note-taking. Subtle dots provide guidance without distracting from your content.
-- Lined Paper -Classic ruled lines for writing, journaling, and everyday notes.
-- Square Grid - Standard graph paper for mathematics, plotting, and technical drawing.
-- Isometric Grid - Triangular grids for 3D sketches, architectural drawings, and isometric illustrations.
+* **Dot Grid** - Perfect for bullet journaling, sketching, and note-taking. Subtle dots provide guidance without distracting from your content.
 
-- Hex Grid - Hexagonal layouts for tabletop games, maps, and geometric artwork.
+* **Lined Paper** - Classic ruled lines for writing, journaling, and everyday notes.
 
-- Cross Grid - Crosshatch patterns designed for drafting and precision work.
+* **Square Grid** - Standard graph paper for mathematics, plotting, and technical drawing.
 
-- Graph Paper - Traditional 5×5 graph paper featuring bold major lines and subtle minor divisions, ideal for mathematics and data plotting.
+* **Isometric Grid** - Triangular grids for 3D sketches, architectural drawings, and isometric illustrations.
 
-- Large Dot Grid - Larger, more visible dots for bold journaling, planning, and heavy writing.
+* **Hex Grid** - Hexagonal layouts for tabletop games, maps, and geometric artwork.
 
-- Music Staff - Five-line staff paper for composers, musicians, and music students.
+* **Cross Grid** - Crosshatch patterns designed for drafting and precision work.
 
-- Isometric Dots - An isometric dot layout for perspective drawing and 3D sketching.
+* **Graph Paper** - Traditional 5×5 graph paper featuring bold major lines and subtle minor divisions, ideal for mathematics and data plotting.
 
+* **Large Dot Grid** - Larger, more visible dots for bold journaling, planning, and heavy writing.
+
+* **Music Staff** - Five-line staff paper for composers, musicians, and music students.
+
+* **Isometric Dots** - An isometric dot layout for perspective drawing and 3D sketching.
+
+---
 
 ##  Customizable Spacing
 
