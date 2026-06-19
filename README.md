@@ -193,7 +193,7 @@ offthegrid/
 │   ├── hooks/
 │   │   ├── useDebouncedGrid.ts
 │   │   └── useNotification.ts
-│   ├── patterns/                    ← KEEP THIS (all draw*.ts files)
+│   ├── patterns/
 │   │   ├── dotGrid.ts
 │   │   ├── drawCrossGrid.ts
 │   │   ├── drawDotGridLarge.ts

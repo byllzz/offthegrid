@@ -38,68 +38,94 @@ export const PatternRenderer: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    //  Read the actual layout size assigned to the element by CSS
+    // Check if we are currently evaluating print media
+    const isPrintingMedia = window.matchMedia('print').matches;
+
+    // Clear explicit inline style dimensions on screen mode.
+    if (!isPrintingMedia) {
+      canvas.style.width = '';
+      canvas.style.height = '';
+    }
+
+    // Read the actual layout sizes assigned by the CSS layout engine
     const width = canvas.clientWidth || window.innerWidth;
     const height = canvas.clientHeight || window.innerHeight;
 
-    // Check if we are currently evaluating print media to boost target DPI
-    const isPrintingMedia = window.matchMedia('print').matches;
+    // Boost print resolution DPI to 3x for high quality physical paper lines
     const dpr = isPrintingMedia ? 3 : window.devicePixelRatio || 1;
 
-    // Set internal bitmap size scaled by resolution factor
+    // Set internal canvas bitmap buffer size
     canvas.width = width * dpr;
     canvas.height = height * dpr;
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
+
+    // Only apply fixed pixel inline styles during active print rendering
+    if (isPrintingMedia) {
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+    }
 
     ctx.scale(dpr, dpr);
 
-    // Clear canvas
+    // Clear canvas frame
     ctx.clearRect(0, 0, width, height);
 
-    //  Calculate exact spacing (Standard 96 CSS pixels match print scales perfectly)
+    // Calculate exact spacing matching real physical units
     const pxPerUnit = UNIT_CONFIG[unit].pxPerUnit;
     const spacingPx = spacing * pxPerUnit;
 
-    // Draw the pattern
+    // Draw the active selected pattern
     const renderer = patternRenderers[pattern];
     if (renderer) {
       renderer(ctx, width, height, spacingPx, opacity, gridColor);
     }
   };
 
-  // Render on changes and track window sizing changes
+  // Manage all event listeners and structural tracking synchronously
   useEffect(() => {
+    // Initial draw for current state configuration
     renderCanvas();
 
     const handleResize = () => renderCanvas();
     window.addEventListener('resize', handleResize);
     window.addEventListener('orientationchange', handleResize);
+    window.addEventListener('focus', handleResize);
 
-    // Actively watch for print media queries kicking in
+    // Actively track browser print state shifts
     const mediaQueryList = window.matchMedia('print');
-    const handlePrintChange = () => renderCanvas();
+    const handlePrintChange = (e: MediaQueryListEvent) => {
+      if (!e.matches) {
+        // Give the browser's layout engine 50ms to finish closing
+        // the print preview tree before executing the final screen paint.
+        setTimeout(renderCanvas, 50);
+      } else {
+        renderCanvas();
+      }
+    };
     mediaQueryList.addEventListener('change', handlePrintChange);
+
+    //  Moved ResizeObserver inside this unified tracking block.
+    // This forces it to recreate alongside state updates, destroying the stale closure.
+    const canvas = canvasRef.current;
+    let resizeObserver: ResizeObserver | null = null;
+
+    if (canvas) {
+      resizeObserver = new ResizeObserver(() => {
+        renderCanvas();
+      });
+      resizeObserver.observe(canvas);
+    }
 
     return () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('orientationchange', handleResize);
+      window.removeEventListener('focus', handleResize);
       mediaQueryList.removeEventListener('change', handlePrintChange);
+
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      }
     };
-  }, [pattern, spacing, opacity, unit, gridColor]);
-
-  // ResizeObserver catches the exact moment print stylesheets apply changes
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const resizeObserver = new ResizeObserver(() => {
-      renderCanvas();
-    });
-    resizeObserver.observe(canvas);
-
-    return () => resizeObserver.disconnect();
-  }, []);
+  }, [pattern, spacing, opacity, unit, gridColor]); // All dependencies
 
   return (
     <canvas
