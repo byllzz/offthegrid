@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GridBackground } from './components/Canvas/GridBackground';
+import { PatternRenderer } from './components/Canvas/PatternRenderer';
 import { Ruler } from './components/Controls/Ruler';
 import { ControlPanel } from './components/Controls/ControlPanel';
 import { Loader } from './components/UI/Loader';
@@ -14,7 +14,7 @@ function App() {
       {isLoaderComplete && (
         <>
           <Ruler />
-          <GridBackground />
+          <PatternRenderer />
           <ControlPanel />
           <div className="fixed bottom-[10px] font-normal right-5 text-[15px] text-[#222] z-[100] print:hidden">
             designed and developed by{' '}
@@ -27,7 +27,6 @@ function App() {
               Bilal Malik
             </a>
           </div>
-          {/* Global notification - always rendered, shows when triggered */}
           <GlobalNotification />
         </>
       )}

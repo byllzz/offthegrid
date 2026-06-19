@@ -28,7 +28,7 @@ export const Ruler: React.FC = () => {
       message: `Ruler switched to ${unitLabel}`,
       subMessage: 'Grid will update automatically',
       duration: 2000,
-      variant: 'default',
+      variant: 'info',
     });
 
     setUnit(newUnit);

@@ -174,36 +174,46 @@ Everything is stored locally, keeping your workflow fast and private.
 ```
 offthegrid/
 ├── public/
-│ └── favicon/
-│ └── icon.png
+│   └── favicon/
+│       └── icon.png
 ├── src/
-│ ├── components/
-│ │ ├── Canvas/
-│ │ │ └── GridBackground.tsx
-│ │ ├── Controls/
-│ │ │ ├── ControlPanel.tsx
-│ │ │ └── Ruler.tsx
-│ │ └── UI/
-│ │ ├── Loader.tsx
-│ │ ├── Notification.tsx
-│ │ ├── GlobalNotification.tsx
-│ │ ├── OpacityControl.tsx
-│ │ ├── PrintButton.tsx
-│ │ └── SpacingControl.tsx
-│ ├── hooks/
-│ │ ├── useDebouncedGrid.ts
-│ │ └── useNotification.ts
-│ ├── store/
-│ │ ├── gridStore.ts
-│ │ └── notificationStore.ts
-│ ├── types/
-│ │ └── grid.ts
-│ ├── utils/
-│ │ ├── constants.ts
-│ │ └── patternClasses.ts
-│ ├── App.tsx
-│ ├── main.tsx
-│ └── index.css
+│   ├── components/
+│   │   ├── Canvas/
+│   │   │   └── PatternRenderer.tsx  ←  (new)
+│   │   ├── Controls/
+│   │   │   ├── ControlPanel.tsx
+│   │   │   └── Ruler.tsx
+│   │   └── UI/
+│   │       ├── Loader.tsx
+│   │       ├── Notification.tsx
+│   │       ├── GlobalNotification.tsx
+│   │       ├── OpacityControl.tsx
+│   │       ├── PrintButton.tsx
+│   │       └── SpacingControl.tsx
+│   ├── hooks/
+│   │   ├── useDebouncedGrid.ts
+│   │   └── useNotification.ts
+│   ├── patterns/                    ← KEEP THIS (all draw*.ts files)
+│   │   ├── dotGrid.ts
+│   │   ├── drawCrossGrid.ts
+│   │   ├── drawDotGridLarge.ts
+│   │   ├── drawGraphGrid.ts
+│   │   ├── drawHexGrid.ts
+│   │   ├── drawIsometricDots.ts
+│   │   ├── drawIsometricGrid.ts
+│   │   ├── drawMusicStaff.ts
+│   │   ├── linedPaper.ts
+│   │   └── squareGrid.ts
+│   ├── store/
+│   │   ├── gridStore.ts
+│   │   └── notificationStore.ts
+│   ├── types/
+│   │   └── grid.ts
+│   ├── utils/
+│   │   ├── constants.ts
+│   ├── App.tsx                      ← UPDATED (PatternRenderer)
+│   ├── main.tsx
+│   └── index.css                    ← CLEANED UP (removed pattern classes)
 ├── .gitignore
 ├── index.html
 ├── package.json

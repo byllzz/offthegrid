@@ -9,11 +9,7 @@
 
 /* Custom properties */
 :root {
-  --grid-spacing: 18.9px;
-  --opacity: 0.25;
-  --grid-color: #000000;
   --bg-color: #ffffff;
-  --pattern-color: color-mix(in srgb, var(--grid-color) calc(var(--opacity) * 100%), transparent);
 }
 
 body {
@@ -26,110 +22,6 @@ body {
 
 button {
   cursor: pointer;
-}
-
-/* CSS Pattern Implementations */
-.p-dots {
-  background-image: radial-gradient(circle, var(--pattern-color) 1px, transparent 1.5px);
-  background-size: var(--grid-spacing) var(--grid-spacing);
-  background-position: center;
-}
-
-.p-lines {
-  background-image: linear-gradient(to bottom, var(--pattern-color) 1px, transparent 1.3px);
-  background-size: 100% var(--grid-spacing);
-}
-
-.p-grid {
-  background-image:
-    linear-gradient(to right, var(--pattern-color) 1px, transparent 1.3px),
-    linear-gradient(to bottom, var(--pattern-color) 1px, transparent 1.3px);
-  background-size: var(--grid-spacing) var(--grid-spacing);
-}
-
-.p-isometric {
-  background-image:
-    repeating-linear-gradient(30deg,
-      var(--pattern-color) 0px,
-      var(--pattern-color) 1px,
-      transparent 1.4px,
-      transparent calc(var(--grid-spacing) / 0.866)),
-    repeating-linear-gradient(150deg,
-      var(--pattern-color) 0px,
-      var(--pattern-color) 1px,
-      transparent 1.4px,
-      transparent calc(var(--grid-spacing) / 0.866)),
-    repeating-linear-gradient(90deg,
-      var(--pattern-color) 0px,
-      var(--pattern-color) 1px,
-      transparent 1.4px,
-      transparent var(--grid-spacing));
-}
-
-.p-hex {
-  background-image:
-    repeating-linear-gradient(60deg,
-      var(--pattern-color) 0px,
-      var(--pattern-color) 1px,
-      transparent 1.4px,
-      transparent calc(var(--grid-spacing) * 0.866)),
-    repeating-linear-gradient(-60deg,
-      var(--pattern-color) 0px,
-      var(--pattern-color) 1px,
-      transparent 1.4px,
-      transparent calc(var(--grid-spacing) * 0.866)),
-    repeating-linear-gradient(0deg,
-      var(--pattern-color) 0px,
-      var(--pattern-color) 1px,
-      transparent 1.4px,
-      transparent var(--grid-spacing));
-}
-
-.p-cross {
-  background-image:
-    linear-gradient(to right, var(--pattern-color) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--pattern-color) 1px, transparent 1px);
-  background-size: var(--grid-spacing) var(--grid-spacing);
-  background-position: center;
-}
-
-.p-graph {
-  background-image:
-    linear-gradient(to right, var(--pattern-color) 1.5px, transparent 1.8px),
-    linear-gradient(to bottom, var(--pattern-color) 1.5px, transparent 1.8px),
-    linear-gradient(to right, color-mix(in srgb, var(--pattern-color) 40%, transparent) 1px, transparent 1.3px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--pattern-color) 40%, transparent) 1px, transparent 1.3px);
-  background-size:
-    calc(var(--grid-spacing) * 5) calc(var(--grid-spacing) * 5),
-    calc(var(--grid-spacing) * 5) calc(var(--grid-spacing) * 5),
-    var(--grid-spacing) var(--grid-spacing),
-    var(--grid-spacing) var(--grid-spacing);
-}
-
-.p-dots-large {
-  background-image: radial-gradient(circle, var(--pattern-color) 2px, transparent 2.5px);
-  background-size: var(--grid-spacing) var(--grid-spacing);
-  background-position: center;
-}
-
-.p-music {
-  background-image: repeating-linear-gradient(to bottom,
-      var(--pattern-color) 0px,
-      var(--pattern-color) 1px,
-      transparent 1.3px,
-      transparent calc(var(--grid-spacing) * 0.3));
-  background-size: 100% calc(var(--grid-spacing) * 1.5 + var(--grid-spacing) * 1.2);
-  background-position: top calc(var(--grid-spacing) * 1.5) left 0;
-}
-
-.p-isometric-dots {
-  background-image:
-    radial-gradient(circle, var(--pattern-color) 1px, transparent 1.5px),
-    radial-gradient(circle, var(--pattern-color) 1px, transparent 1.5px);
-  background-size: var(--grid-spacing) calc(var(--grid-spacing) * 0.866);
-  background-position:
-    0 0,
-    calc(var(--grid-spacing) / 2) calc(var(--grid-spacing) * 0.433);
 }
 
 @keyframes blink {
@@ -148,25 +40,82 @@ button {
   animation: blink 0.6s alternate infinite linear;
 }
 
-/* PRINT Logic */
+/* Print styles */
+
+
+/* Page header and footer */
+@page {
+  @top-left {
+    content: "Grid Paper";
+    font-size: 10pt;
+    color: #666;
+    font-family: "Outfit", sans-serif;
+  }
+
+  @top-center {
+    content: "OffTheGrid";
+    font-size: 12pt;
+    font-weight: bold;
+    color: #333;
+    font-family: "Story Script", cursive;
+  }
+
+  @top-right {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 10pt;
+    color: #666;
+    font-family: "Outfit", sans-serif;
+  }
+
+  @bottom-left {
+    content: "Generated with OffTheGrid";
+    font-size: 9pt;
+    color: #999;
+    font-family: "Outfit", sans-serif;
+  }
+
+  @bottom-center {
+    content: "";
+  }
+
+  @bottom-right {
+    content: "gridpaper.vercel.app";
+    font-size: 9pt;
+    color: #999;
+    font-family: "Outfit", sans-serif;
+  }
+}
+
 @media print {
 
+  /* Reset body for print */
   html,
   body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
     background: white !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
-  .grid-background {
+  /* Canvas fills entire page */
+  canvas {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    display: block !important;
+    z-index: 0 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
-    z-index: 1 !important;
   }
+
+  /* Hide all UI elements during print */
+  .print-hidden,
+  [class*="print:hidden"] {
+    display: none !important;
+  }
+
 }

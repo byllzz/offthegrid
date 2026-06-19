@@ -143,10 +143,9 @@ export const GlobalNotification: React.FC = () => {
             {/* Progress bar */}
             <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/20 rounded-b-lg overflow-hidden">
               <div
-                className={`h-full ${styles.accent} bg-current rounded-b-lg transition-all ease-linear`}
+                className={`h-full ${styles.accent} bg-current rounded-b-lg`}
                 style={{
-                  width: '100%',
-                  transitionDuration: `${notification.duration || 2500}ms`,
+                  animation: `shrink ${notification.duration || 2500}ms linear forwards`,
                 }}
               />
             </div>
@@ -168,6 +167,10 @@ export const GlobalNotification: React.FC = () => {
         .animate-slide-in {
           animation: slide-in 0.3s ease-out forwards;
         }
+          @keyframes shrink {
+  from { width: 100%; }
+  to { width: 0%; }
+}
       `}</style>
     </div>
   );

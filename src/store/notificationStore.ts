@@ -6,9 +6,9 @@ export interface NotificationItem {
   id: string;
   message: string;
   subMessage?: string;
-  icon?: string; // Changed from React.ReactNode to string (icon name)
   duration?: number;
   variant?: NotificationVariant;
+  // icon?: string;
 }
 
 interface NotificationStore {

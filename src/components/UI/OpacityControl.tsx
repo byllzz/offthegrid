@@ -35,7 +35,7 @@ export const OpacityControl: React.FC<OpacityControlProps> = ({
     onColorChange?.(defaultColor);
   };
 
-  const isDefaultColor = color === defaultColor;
+  const isDefaultColor = color.toLowerCase() === defaultColor.toLowerCase();
 
   return (
     <div className="flex items-center gap-[15px] w-full">
