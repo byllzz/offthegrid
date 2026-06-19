@@ -100,7 +100,7 @@ export const GlobalNotification: React.FC = () => {
   if (notifications.length === 0) return null;
 
   return (
-    <div className="fixed bottom-6 left-6 z-[9999] flex flex-col gap-2">
+    <div className="fixed bottom-6 left-6 z-[9999] flex flex-col gap-2 print:hidden">
       {notifications.map(notification => {
         const styles = variantStyles[notification.variant || 'default'];
         const icon = getIcon(notification.variant);
