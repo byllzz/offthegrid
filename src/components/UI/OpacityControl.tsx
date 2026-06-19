@@ -6,6 +6,7 @@ interface OpacityControlProps {
   colorPreviewStyle: React.CSSProperties;
   color?: string;
   onColorChange?: (color: string) => void;
+  defaultColor?: string;
 }
 
 export const OpacityControl: React.FC<OpacityControlProps> = ({
@@ -14,6 +15,7 @@ export const OpacityControl: React.FC<OpacityControlProps> = ({
   colorPreviewStyle,
   color = '#7f8c8d',
   onColorChange,
+  defaultColor = '#7f8c8d',
 }) => {
   const colorInputRef = useRef<HTMLInputElement>(null);
 
@@ -28,6 +30,12 @@ export const OpacityControl: React.FC<OpacityControlProps> = ({
   const handleColorClick = () => {
     colorInputRef.current?.click();
   };
+
+  const handleReset = () => {
+    onColorChange?.(defaultColor);
+  };
+
+  const isDefaultColor = color === defaultColor;
 
   return (
     <div className="flex items-center gap-[15px] w-full">
@@ -53,14 +61,17 @@ export const OpacityControl: React.FC<OpacityControlProps> = ({
         onChange={handleChange}
       />
       <div className="flex items-center gap-2 shrink-0">
+        {/* Color preview */}
         <div
           className="w-[70px] h-7 rounded-sm border border-[#ccc] cursor-pointer hover:opacity-80 transition-opacity"
           style={colorPreviewStyle}
           onClick={handleColorClick}
           title="Click to change color"
         />
+
+        {/* Color picker button */}
         <button
-          className="w-7 h-7 rounded-sm border border-[#ccc] bg-white hover:bg-[#f5f5f5] flex items-center justify-center text-[#555] transition-colors shrink-0"
+          className="w-7 h-7 rounded-sm border border-[#ccc] bg-white hover:bg-[#f5f5f5] flex items-center justify-center text-[#555] transition-colors shrink-0 cursor-pointer"
           onClick={handleColorClick}
           title="Change color"
           type="button"
@@ -69,6 +80,22 @@ export const OpacityControl: React.FC<OpacityControlProps> = ({
             <path d="M12 3L5 9v8h14V9l-7-6zm0 2.5l4.5 3.5H15v4h-6v-4H7.5L12 5.5zM5 19v2h14v-2H5z" />
           </svg>
         </button>
+
+        {/* Reset button */}
+        <button
+          className={`w-7 h-7 rounded-sm border border-[#ccc] bg-white hover:bg-[#f5f5f5] flex items-center justify-center cursor-pointer text-[#555]  ${
+            isDefaultColor ? 'opacity-30 cursor-not-allowed' : ''
+          }`}
+          onClick={handleReset}
+          title={isDefaultColor ? 'Already using default color' : 'Reset to default color'}
+          type="button"
+          disabled={isDefaultColor}
+        >
+          <svg viewBox="0 0 24 24" className={`size-4 fill-current`}>
+            <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z" />
+          </svg>
+        </button>
+
         <input
           ref={colorInputRef}
           type="color"

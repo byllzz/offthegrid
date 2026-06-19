@@ -11,6 +11,7 @@ interface GridStore extends GridConfig {
   setGridColor: (color: string) => void;
   toggleRuler: () => void;
   resetToDefault: () => void;
+  getDefaultColor: () => string;
 }
 
 const DEFAULT_PATTERN: PatternType = 'dot';
@@ -33,7 +34,6 @@ export const useGridStore = create<GridStore>()(
     (set, get) => ({
       ...defaultConfig,
 
-      //  Only change pattern, keep spacing unchanged
       setPattern: pattern => set({ pattern }),
 
       setSpacing: spacing => set({ spacing }),
@@ -45,19 +45,19 @@ export const useGridStore = create<GridStore>()(
       setUnit: unit => {
         const currentSpacing = get().spacing;
         const oldUnit = get().unit;
-        // Convert spacing to new unit
         const oldPxPerUnit = UNIT_CONFIG[oldUnit].pxPerUnit;
         const newPxPerUnit = UNIT_CONFIG[unit].pxPerUnit;
         const newSpacing = (currentSpacing * oldPxPerUnit) / newPxPerUnit;
         set({
           unit,
-          spacing: Math.round(newSpacing / UNIT_CONFIG[unit].step) * UNIT_CONFIG[unit].step, // snap to step
+          spacing: Math.round(newSpacing / UNIT_CONFIG[unit].step) * UNIT_CONFIG[unit].step,
         });
       },
 
       toggleRuler: () => set(state => ({ showRuler: !state.showRuler })),
 
-      // Reset still uses default spacing for the default pattern
+      getDefaultColor: () => DEFAULT_COLOR, // for default color
+
       resetToDefault: () => {
         const defaultPattern = DEFAULT_PATTERN;
         const defaultUnit = DEFAULT_UNIT;
@@ -72,7 +72,7 @@ export const useGridStore = create<GridStore>()(
       },
     }),
     {
-      name: 'offthegrid-storage', // localStorage key
+      name: 'offthegrid-storage',
     },
   ),
 );

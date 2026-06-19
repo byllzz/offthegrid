@@ -5,6 +5,7 @@ import type { PatternType } from '../../types/grid';
 import { SpacingControl } from '../UI/SpacingControl';
 import { OpacityControl } from '../UI/OpacityControl';
 import { PrintButton } from '../UI/PrintButton';
+import favicon from '../../../public/favicon/icon.png';
 
 const patternIcons: Record<PatternType, React.ReactNode> = {
   dot: (
@@ -127,6 +128,7 @@ export const ControlPanel: React.FC = () => {
     setUnit,
     gridColor,
     setGridColor,
+    getDefaultColor,
   } = useGridStore();
 
   const config = UNIT_CONFIG[unit];
@@ -142,8 +144,9 @@ export const ControlPanel: React.FC = () => {
     <div className="fixed left-1/2 top-0 -translate-x-1/2 z-[100] bg-white w-full max-w-[480px] mx-auto shadow-2xl px-[50px] py-6 text-center print:hidden">
       {/* Header */}
       <div className="flex items-center justify-center gap-3 mb-2!">
+        <img src={favicon} className="h-8 w-8" alt="" />
         <h1 className="text-base text-[#333] font-normal">
-          Make your own grid paper with <em className="font-bold italic">offthegrid</em>
+          Make your own grid paper with <strong className="font-bold">offthegrid</strong>
         </h1>
       </div>
 
@@ -189,6 +192,7 @@ export const ControlPanel: React.FC = () => {
           colorPreviewStyle={colorPreviewStyle}
           color={gridColor}
           onColorChange={setGridColor}
+          defaultColor={getDefaultColor()} //  default color
         />
       </div>
 

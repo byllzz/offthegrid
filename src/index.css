@@ -24,6 +24,10 @@ body {
   font-family: "Outfit", serif;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* CSS Pattern Implementations */
 .p-dots {
   background-image: radial-gradient(circle, var(--grid-color) 1.5px, transparent 1.5px);
@@ -155,6 +159,8 @@ body {
     0 0,
     calc(var(--grid-spacing) / 2) calc(var(--grid-spacing) * 0.433);
 }
+
+
 
 /* PRINT Logic */
 @media print {
