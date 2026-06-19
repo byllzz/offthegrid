@@ -42,18 +42,27 @@ export const OpacityControl: React.FC<OpacityControlProps> = ({
       <input
         type="range"
         className="flex-1 h-1 bg-mauve-800 outline-none appearance-none cursor-pointer
-        [&::-webkit-slider-thumb]:appearance-none
-        [&::-webkit-slider-thumb]:size-6
-        [&::-webkit-slider-thumb]:h-8
-        [&::-webkit-slider-thumb]:bg-mauve-800
-        [&::-webkit-slider-thumb]:rounded-[2px]
-        [&::-webkit-slider-thumb]:cursor-pointer
-        [&::-moz-range-thumb]:size-6
-        [&::-moz-range-thumb]:h-8
-        [&::-moz-range-thumb]:bg-mauve-800
-        [&::-moz-range-thumb]:rounded-[2px]
-        [&::-moz-range-thumb]:border-none
-        [&::-moz-range-thumb]:cursor-pointer"
+  [&::-webkit-slider-thumb]:appearance-none
+  [&::-webkit-slider-thumb]:size-6
+  [&::-webkit-slider-thumb]:h-8
+  [&::-webkit-slider-thumb]:bg-mauve-800
+  [&::-webkit-slider-thumb]:rounded-[2px]
+  [&::-webkit-slider-thumb]:cursor-pointer
+  [&::-webkit-slider-thumb]:border-0
+  [&::-webkit-slider-thumb]:bg-[url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2224%22 viewBox=%220 0 12 24%22%3E%3Crect width=%2212%22 height=%2224%22 fill=%22%23333%22 rx=%222%22/%3E%3Cline x1=%223%22 y1=%225%22 x2=%223%22 y2=%2219%22 stroke=%22white%22 stroke-width=%221.5%22/%3E%3Cline x1=%226%22 y1=%225%22 x2=%226%22 y2=%2219%22 stroke=%22white%22 stroke-width=%221.5%22/%3E%3Cline x1=%229%22 y1=%225%22 x2=%229%22 y2=%2219%22 stroke=%22white%22 stroke-width=%221.5%22/%3E%3C/svg%3E')]
+  [&::-webkit-slider-thumb]:bg-no-repeat
+  [&::-webkit-slider-thumb]:bg-center
+  [&::-webkit-slider-thumb]:bg-[length:12px_24px]
+  [&::-moz-range-thumb]:size-6
+  [&::-moz-range-thumb]:h-8
+  [&::-moz-range-thumb]:bg-mauve-800
+  [&::-moz-range-thumb]:rounded-[2px]
+  [&::-moz-range-thumb]:border-none
+  [&::-moz-range-thumb]:cursor-pointer
+  [&::-moz-range-thumb]:bg-[url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2224%22 viewBox=%220 0 12 24%22%3E%3Crect width=%2212%22 height=%2224%22 fill=%22%23333%22 rx=%222%22/%3E%3Cline x1=%223%22 y1=%225%22 x2=%223%22 y2=%2219%22 stroke=%22white%22 stroke-width=%221.5%22/%3E%3Cline x1=%226%22 y1=%225%22 x2=%226%22 y2=%2219%22 stroke=%22white%22 stroke-width=%221.5%22/%3E%3Cline x1=%229%22 y1=%225%22 x2=%229%22 y2=%2219%22 stroke=%22white%22 stroke-width=%221.5%22/%3E%3C/svg%3E')]
+  [&::-moz-range-thumb]:bg-no-repeat
+  [&::-moz-range-thumb]:bg-center
+  [&::-moz-range-thumb]:bg-[length:12px_24px]"
         min="0.05"
         max="1.00"
         step="0.01"

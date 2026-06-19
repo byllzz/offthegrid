@@ -15,7 +15,7 @@ function App() {
           <Ruler />
           <GridBackground />
           <ControlPanel />
-          <div className="fixed bottom-[10px] font-normal right-5 text-[15px] text-[#222] z-[100] print:hidden">
+          <div className="fixed bottom-[10px]  font-normal right-5 text-[15px] text-[#222] z-[100] print:hidden">
             designed and developed by{' '}
             <a
               href="https://github.com/byllzz"
