@@ -29,7 +29,6 @@ button {
 }
 
 /* CSS Pattern Implementations */
-
 .p-dots {
   background-image: radial-gradient(circle, var(--pattern-color) 1px, transparent 1.5px);
   background-size: var(--grid-spacing) var(--grid-spacing);

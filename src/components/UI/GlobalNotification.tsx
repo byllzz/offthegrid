@@ -39,7 +39,7 @@ const getIcon = (variant?: string) => {
 
 export const GlobalNotification: React.FC = () => {
   const { notifications, hide } = useNotificationStore();
-  const timeoutRefs = useRef<Record<string, NodeJS.Timeout>>({});
+  const timeoutRefs = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
 
   useEffect(() => {
     notifications.forEach(notification => {
