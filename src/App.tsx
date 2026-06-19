@@ -3,6 +3,7 @@ import { GridBackground } from './components/Canvas/GridBackground';
 import { Ruler } from './components/Controls/Ruler';
 import { ControlPanel } from './components/Controls/ControlPanel';
 import { Loader } from './components/UI/Loader';
+import { GlobalNotification } from './components/UI/GlobalNotification';
 
 function App() {
   const [isLoaderComplete, setIsLoaderComplete] = useState(false);
@@ -15,7 +16,7 @@ function App() {
           <Ruler />
           <GridBackground />
           <ControlPanel />
-          <div className="fixed bottom-[10px]  font-normal right-5 text-[15px] text-[#222] z-[100] print:hidden">
+          <div className="fixed bottom-[10px] font-normal right-5 text-[15px] text-[#222] z-[100] print:hidden">
             designed and developed by{' '}
             <a
               href="https://github.com/byllzz"
@@ -26,6 +27,8 @@ function App() {
               Bilal Malik
             </a>
           </div>
+          {/* Global notification - always rendered, shows when triggered */}
+          <GlobalNotification />
         </>
       )}
     </>
