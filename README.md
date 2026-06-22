@@ -31,6 +31,23 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/byllzz/offthegrid/stargazers">
+    <img src="https://img.shields.io/github/stars/byllzz/gridzzly?style=flat&color=9B72FF" alt="GitHub Stars">
+  </a>
+  <a href="https://github.com/byllzz/offthegrid/forks">
+    <img src="https://img.shields.io/github/forks/byllzz/gridzzly?style=flat&color=9B72FF" alt="GitHub Forks">
+  </a>
+  <a href="https://github.com/byllzz/offthegrid/issues">
+    <img src="https://img.shields.io/github/issues/byllzz/gridzzly?style=flat&color=9B72FF" alt="GitHub Issues">
+  </a>
+  <a href="https://github.com/byllzz/offthegrid/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/byllzz/gridzzly?style=flat&color=9B72FF" alt="MIT License">
+  </a>
+</p>
+
+---
+
+<p align="center">
   <a href="https://gridpaper.vercel.app">
     <img src="https://img.shields.io/badge/%20Try%20-OffTheGrid-9B72FF?style=for-the-badge" alt="Try OffTheGrid" />
   </a>
