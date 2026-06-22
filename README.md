@@ -334,4 +334,4 @@ If OffTheGrid helps you, consider supporting the project:
 
 ---
 
-<p align="center"> Made with 💛 using React, TypeScript, and Tailwind CSS.<br /> <strong>Print your perfect grid. 🎯</strong> </p><p align="center"> © 2026 OffTheGrid - Open Source MIT </p>
+<p align="center"> Made with 💛 using React, TypeScript, and Tailwind CSS.<br /> <strong>Print your perfect grid. </strong> </p><p align="center"> © 2026 OffTheGrid - Open Source MIT </p>
