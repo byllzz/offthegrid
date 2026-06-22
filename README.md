@@ -7,7 +7,7 @@
 
 <p align="center">
   <strong>Make your own grid paper - instantly.</strong><br />
-  Choose from 10+ patterns, customize spacing, color, and opacity, then print and get that paper.
+  Choose from 10+ patterns, customize spacing, color, and opacity, then print.
 </p>
 
 <p align="center">
