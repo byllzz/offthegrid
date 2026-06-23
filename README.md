@@ -2,7 +2,7 @@
 <p align="center">
   <img src="/public/favicon/favicon.svg" width="120" alt="OffTheGrid Logo" />
 </p>
-
+<!-- title project-->
 <h1 align="center">OffTheGrid</h1>
 
 <p align="center">
