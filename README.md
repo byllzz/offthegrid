@@ -46,7 +46,7 @@
 </p>
 
 ---
-
+<!-- live demo-->
 <p align="center">
   <a href="https://gridpaper.vercel.app">
     <img src="https://img.shields.io/badge/%20Try%20-OffTheGrid-9B72FF?style=for-the-badge" alt="Try OffTheGrid" />
