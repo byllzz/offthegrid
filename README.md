@@ -9,7 +9,7 @@
   <strong>Make your own grid paper - instantly.</strong><br />
   Choose from 10+ patterns, customize spacing, color, and opacity, then print.
 </p>
-
+<!-- badges-->
 <p align="center">
   <a href="./LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-9B72FF.svg?style=flat" alt="MIT License" />
