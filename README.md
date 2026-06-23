@@ -327,7 +327,7 @@ If OffTheGrid helps you, consider supporting the project:
 -  Share it with your friends
 -  Leave feedback in GitHub Discussions
 -  Buy me a coffee
-
+<!-- badge for coffee-->
 <p align="left"> <a href="https://buymeacoffee.com/bilalmlkdev"> <img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" /> </a>
 
 <a href="https://github.com/sponsors/byllzz"> <img src="https://img.shields.io/badge/Sponsor%20on%20GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="Sponsor on GitHub" /> </a> </p>
