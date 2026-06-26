@@ -1,4 +1,4 @@
-<!-- logo-->
+<!--project logo-->
 <p align="center">
   <img src="/public/favicon/favicon.svg" width="120" alt="OffTheGrid Logo" />
 </p>
