@@ -291,7 +291,7 @@ git push origin feature/amazing-feature
 
 ---
 
-
+<!-- install this project on your device-->
 ## Getting Started
 
 ### Prerequisites
