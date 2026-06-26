@@ -319,7 +319,7 @@ npm run build
 ```
 
 ---
-
+<!-- support me by doing diff things -->
 ## Support
 If OffTheGrid helps you, consider supporting the project:
 
