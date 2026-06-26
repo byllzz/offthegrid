@@ -243,7 +243,7 @@ offthegrid/
 
 
 ---
-
+<!-- tecs used into this project-->
 ## Tech Stack
 
 | Technology | Purpose |
