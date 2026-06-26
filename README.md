@@ -256,7 +256,7 @@ offthegrid/
 | **use-debounce** | Performance optimization |
 
 ---
-
+<!-- want to contribute : follow steps below-->
 ## Contributing
 Contributions are welcome. Yes, even yours.
 
