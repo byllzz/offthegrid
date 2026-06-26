@@ -333,5 +333,5 @@ If OffTheGrid helps you, consider supporting the project:
 <a href="https://github.com/sponsors/byllzz"> <img src="https://img.shields.io/badge/Sponsor%20on%20GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="Sponsor on GitHub" /> </a> </p>
 
 ---
-
+<!-- note-->
 <p align="center"> Made with 💛 using React, TypeScript, and Tailwind CSS.<br /> <strong>Print your perfect grid.🎯 </strong> </p><p align="center"> © 2026 OffTheGrid - Open Source MIT </p>
