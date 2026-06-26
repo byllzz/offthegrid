@@ -186,7 +186,7 @@ Everything is stored locally, keeping your workflow fast and private.
 | **Print** | Click the `PRINT` button |
 
 ---
-
+<!-- project structure -->
 ## Project Structure
 
 ```
