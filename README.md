@@ -281,7 +281,7 @@ git push origin feature/amazing-feature
 - *Open a Pull Request*
 
 ---
-
+<!-- follow these guidelines to contribute-->
 ## Guidelines
 - Use ES6+ syntax
 - Format code with Prettier
