@@ -92,7 +92,7 @@ OffTheGrid adapts to **your workflow**, not the other way around.
 Print exactly what you need, when you need it, completely free.
 
 ---
-
+<!-- features -->  
 ##  10+ Grid Patterns
 
 Choose from a growing collection of professionally designed grid patterns for creative, educational, and technical work.
